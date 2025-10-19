@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="201fbf66-80e7-4a1c-8839-0351e0ebdeee" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="gittestaFlow" doc:id="5eff2a06-4303-444f-a461-9ae14a46ca26" >
+		<http:listener doc:name="Listener" doc:id="b112273d-205d-4095-8abb-ede17326778b" config-ref="HTTP_Listener_config" path="/gittesta"/>
+		<logger level="INFO" doc:name="Logger" doc:id="fca2a4eb-c1b7-4745-bec8-aa5f6cec343d" />
+	</flow>
+</mule>
